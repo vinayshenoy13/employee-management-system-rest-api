@@ -1,6 +1,5 @@
 package com.employee.models;
 
-
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,8 +9,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -39,8 +36,8 @@ public class Account {
 	@Size(min = 10, max = 10, message = "Type of account should be of 4-10 characters")
 	private String accountNo;
 
-	@ManyToOne 
+	@ManyToOne
 	@JoinColumn(name = "employee_id")
 	private Employee employee;
-	
+
 }
